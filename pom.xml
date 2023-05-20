@@ -21,6 +21,15 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-
+<distributionManagement>
+	<repository>
+		<id>2373077-release-NGr4Qx</id>
+		<url>https://packages.aliyun.com/maven/repository/2373077-release-NGr4Qx</url>
+	</repository>
+	<snapshotRepository>
+		<id>2373077-snapshot-fGfbSw</id>
+		<url>https://packages.aliyun.com/maven/repository/2373077-snapshot-fGfbSw</url>
+	</snapshotRepository>
+</distributionManagement>
 
 </project>
