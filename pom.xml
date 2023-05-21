@@ -21,11 +21,38 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-<distributionManagement>
-	<snapshotRepository>
-		<id>nexus3</id>
-		<url>http://localhost:8081/repository/maven-snapshots/</url>
-	</snapshotRepository>
-</distributionManagement>
+
+	<profiles>
+		<profile>
+            <id>aliyun_devops</id>
+			<activation>
+				<!--<activeByDefault>true</activeByDefault>-->
+			</activation>
+            <distributionManagement>
+                <repository>
+                    <id>2373077-release-NGr4Qx</id>
+                    <url>https://packages.aliyun.com/maven/repository/2373077-release-NGr4Qx</url>
+                </repository>
+                <snapshotRepository>
+                    <id>2373077-snapshot-fGfbSw</id>
+                    <url>https://packages.aliyun.com/maven/repository/2373077-snapshot-fGfbSw</url>
+                </snapshotRepository>
+            </distributionManagement>
+
+        </profile>
+		<profile>
+            <id>nexus3</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus3-release</id>
+                    <url>http://localhost:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus3-snapshot</id>
+                    <url>http://localhost:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+	</profiles>
 
 </project>
