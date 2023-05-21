@@ -12,9 +12,20 @@
     <artifactId>web-model</artifactId>
     <properties>
         <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+        <TEST_HOST>localhost</TEST_HOST>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -28,6 +39,15 @@
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <environmentVariables>
+                        <TEST_HOST>${TEST_HOST}</TEST_HOST>
+                    </environmentVariables>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
@@ -47,6 +67,29 @@
             </plugin>
         </plugins>
     </build>
+
+<profiles>
+
+
+    <profile>
+        <id>test_env</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <TEST_HOST>test</TEST_HOST>
+        </properties>
+    </profile>
+    <profile>
+        <id>dev_env</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <TEST_HOST>dev</TEST_HOST>
+        </properties>
+    </profile>
+</profiles>
 
 
 </project>
