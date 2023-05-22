@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>asg.dev</groupId>
 	<artifactId>abc30</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>abc30</name>
 	<description>assignment for Spring Boot training course</description>
@@ -24,7 +24,7 @@
 	<scm>
 		<developerConnection>scm:git:git@github.com:qzhang16/abc30.git</developerConnection>
 		<url>https://github.com/qzhang16/abc30</url>
-	  <tag>abc30-0.0.3</tag>
+	  <tag>abc30-0.0.1</tag>
   </scm>
 	<build>
 		<plugins>
