@@ -19,10 +19,10 @@
 	</modules>
 	<properties>
 		<java.version>17</java.version>
-		<project.scm.id>github</project.scm.id>
+		<!--<project.scm.id>github</project.scm.id>-->
 	</properties>
 	<scm>
-		<developerConnection>scm:git:https://github.com/qzhang16/abc30.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:qzhang16/abc30.git</developerConnection>
 		<url>https://github.com/qzhang16/abc30</url>
 	  <tag>abc30-0.0.1</tag>
   </scm>
